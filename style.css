@@ -50,13 +50,33 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding-bottom: 10px;
-  border-bottom: 2px solid #29160f;
+}
+
+header li {
+  color: #942700;
+  line-height: 1.3;
 }
 
 .header__photo {
   padding: 8px;
   padding-top: 28px;
   margin-right: 0;
+}
+
+.header__contact {
+  padding-top: 24px;
+}
+
+ul {
+  padding: 10px 0 10px 42px;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+section {
+  padding-top: 0px;
+  border-top: 2px solid #29160f;
 }
 /*# sourceMappingURL=style.css.map */
