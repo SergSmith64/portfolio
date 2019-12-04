@@ -11,6 +11,7 @@
 <body>
 
   <div class="container">
+
       <header>
           <div class="header__photo">
             <img src="./assets/img/Iam__GIT.jpg" alt="Sergei Kuznetcov" width="200" height="200">
@@ -26,20 +27,25 @@
             </ul>
           </div>
         </header>
+
         <main>
-          <section>
-            <h2>Education:</h2>
-            <ul>
-              <li>Netology.ru</li>
-              <li>Geekbrains.ru</li>
-              <li>Hexlet</li>
-              <li>HTML Academy</li>
-              <li>CodeCademy</li>
-              <li>freecodecamp.org</li>
-            </ul>
+
+          <section class="education-wrapper">
+            <button id="top_btn" class="education-btn">Education:</button>
+            <div id="list_collapse" class="education-list-show">
+              <ul class="education-list">
+                <li>Netology.ru</li>
+                <li>Geekbrains.ru</li>
+                <li>Hexlet</li>
+                <li>HTML Academy</li>
+                <li>CodeCademy</li>
+                <li>freecodecamp.org</li>
+              </ul>
+            </div>
           </section>
+
           <section class="project-wrapper">
-            <h2>Projects:</h2>
+              <h2>Projects:</h2>
             <div class="project-wrapper__item">
               <img src="./assets/img/repair-screen-719px.jpg" alt="screen">
               <!-- <img src="./assets/img/theyalow-screen-719px.jpg" alt="screen"> -->
@@ -47,11 +53,9 @@
 
           </section>
         </main>
-        <footer>
-          RSShool 2019-2020
-        </footer>
+        <footer>RSShool 2019-2020</footer>
   </div>
 
-  
+  <script src="./index.js"></script>
 </body>
 </html>
