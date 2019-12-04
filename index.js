@@ -8,3 +8,109 @@ top_btn.addEventListener('click', function() {
 });
 
 
+
+
+// Expansion panel Swiper
+var sw_btn_1 = document.getElementById('sw_btn_1');
+var descr_1 = document.getElementById('descr_1');
+
+sw_btn_1.addEventListener('click', function() {
+  console.log("__MOUSE__CLICK__1 ");
+  descr_1.classList.toggle('descr_show');
+});
+
+var sw_btn_2 = document.getElementById('sw_btn_2');
+var descr_2 = document.getElementById('descr_2');
+
+sw_btn_2.addEventListener('click', function() {
+  console.log("__MOUSE__CLICK__2_2_2__ ");
+  descr_2.classList.toggle('descr_show');
+});
+
+
+// Slider with buttons
+var slideIndex = 1;
+showSlides(slideIndex);
+
+
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName('project-slider');
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = 'none';
+  }
+  slides[slideIndex-1].style.display = 'flex';
+}
+
+
+
+
+
+
+
+
+// Swipe control
+function swipedetect(el, callback){
+  var touchsurface = el,
+      swipedir,
+      startX,
+      startY,
+      distX,
+      distY,
+      threshold = 150,
+      restraint = 100,
+      allowedTime = 300,
+      elapsedTime,
+      startTime,
+      handleswipe = callback || function(swipedir){};
+
+  touchsurface.addEventListener('touchstart', function(e){
+    var touchobj = e.changedTouches[0];
+        swipedir = 'none';
+        dist = 0;
+        startX = touchobj.pageX;
+        startY = touchobj.pageY;
+        startTime = new Date().getTime();
+    // e.preventDefault();
+  }, false);
+
+  touchsurface.addEventListener('touchend', function(e){
+    var touchobj = e.changedTouches[0];
+    distX = touchobj.pageX - startX;
+    distY = touchobj.pageY - startY;
+    elapsedTime = new Date().getTime() - startTime;
+    if (elapsedTime <= allowedTime){
+      if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint){
+        swipedir = (distX < 0)? 'left' : 'right';
+      }
+      else if (Math.abs(distY) >= threshold && Math.abs(distX) <= restraint){
+        swipedir = (distY < 0)? 'up' : 'down';
+      }
+    }
+    handleswipe(swipedir);
+  }, false);
+}
+
+
+
+
+
+var el = document.getElementById('swipezone');
+
+swipedetect(el, function(swipedir) {
+  if (swipedir === 'left') plusSlides(1);
+  if (swipedir === 'right') plusSlides(-1);
+});
+
+
+
