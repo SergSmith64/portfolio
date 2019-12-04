@@ -127,8 +127,74 @@ section
   padding: 5px
   background-color: rgba(34, 146, 59, 0.404)
 
+
+.project-slider_btn
+  width: 70%
+  height: 100%
+  bottom: 0
+  outline: 0
+  background-color: transparent
+  cursor: pointer
+  &:hover
+    opacity: 0.7
+  
+// ________ SLIDER ________
+
+.slider_wrap
+  position: relative
+  width: 100%
+  margin: auto
+  display: flex
+  justify-content: center
+
+.project-slider
+  width: 84%
+  display: none
+
+
+
+// ________ BUTTONS ________
+.project_next,
+.project_prev
+  position: absolute
+  top: 0
+  height: 100%
+  width: 8%
+  display: flex
+  justify-content: center
+  align-items: center
+  color: red
+  font-size: 24px
+  background-color: blue
+  cursor: pointer
+  &:hover
+    background-color: red
+
+.project_next
+  right: 0
+
+.project_prev
+  left: 0
+
+
 // _________________________________
 
 footer
   padding-top: 30px
   padding-bottom: 20px
+
+// _________ MEDIA QUERY __________
+
+@media screen and (max-width: 768px)
+  .project_next,
+  .project_prev
+    display: none
+
+@media screen and (max-width: 768px)
+  .project-slider
+    width: 100%
+    flex-direction: column
+
+@media screen and (max-width: 768px)
+  .project-slider_btn
+    width: 100%
