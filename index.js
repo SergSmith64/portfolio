@@ -43,7 +43,7 @@ function plusSlides(n) {
 
 function showSlides(n) {
   var i;
-  var slides = document.getElementsByClassName('project-slider');
+  var slides = document.getElementsByClassName('project-wrapper__item');
   if (n > slides.length) {slideIndex = 1}
   if (n < 1) {slideIndex = slides.length}
   for (i = 0; i < slides.length; i++) {
@@ -114,3 +114,39 @@ swipedetect(el, function(swipedir) {
 
 
 
+
+var iwrap = document.getElementById('iwrap');
+var iframe = document.getElementById('iframe');
+var mode_btn = document.getElementById('mode-button');
+
+
+var repair_btn = document.getElementById('repair_btn');
+repair_btn.addEventListener('click', () => {
+  iwrap.style.display = 'flex';
+  iframe.src = './projects/repair-design-project/index.html';
+  mode_btn.innerText = 'Mobile';
+  iframe.style.width = '100%';
+});
+
+
+var theyal_btn = document.getElementById('theyal_btn');
+theyal_btn.addEventListener('click', () => {
+  iwrap.style.display = 'flex';
+  iframe.src = './projects/theyalow/index.html';
+  mode_btn.innerText = 'Mobile';
+  iframe.style.width = '100%';
+});
+
+
+var back_btn = document.getElementById('back-button');
+back_btn.addEventListener('click', () => {
+  iwrap.style.display = 'none';
+});
+
+
+
+
+mode_btn.addEventListener('click', () => {
+  mode_btn.innerText = mode_btn.innerText === 'Desktop' ? 'Mobile' : 'Desktop';
+  iframe.style.width = mode_btn.innerText === 'Mobile' ?  '100%' : '768px';
+});
