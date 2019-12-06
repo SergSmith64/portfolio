@@ -1,19 +1,13 @@
 var top_btn = document.getElementById('top_btn');
 var list_collapse = document.getElementById('list_collapse');
-
 top_btn.addEventListener('click', function() {
   this.classList.toggle('active');
   list_collapse.classList.toggle('show');
   console.log(this.classList);
 });
 
-
-
-
-// Expansion panel Swiper
 var sw_btn_1 = document.getElementById('sw_btn_1');
 var descr_1 = document.getElementById('descr_1');
-
 sw_btn_1.addEventListener('click', function() {
   console.log("__MOUSE__CLICK__1 ");
   descr_1.classList.toggle('descr_show');
@@ -21,25 +15,17 @@ sw_btn_1.addEventListener('click', function() {
 
 var sw_btn_2 = document.getElementById('sw_btn_2');
 var descr_2 = document.getElementById('descr_2');
-
 sw_btn_2.addEventListener('click', function() {
   console.log("__MOUSE__CLICK__2_2_2__ ");
   descr_2.classList.toggle('descr_show');
 });
 
-
-// Slider with buttons
 var slideIndex = 1;
 showSlides(slideIndex);
 
-
-
-// Next/previous controls
 function plusSlides(n) {
   showSlides(slideIndex += n);
 }
-
-
 
 function showSlides(n) {
   var i;
@@ -52,14 +38,6 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = 'flex';
 }
 
-
-
-
-
-
-
-
-// Swipe control
 function swipedetect(el, callback){
   var touchsurface = el,
       swipedir,
@@ -81,7 +59,6 @@ function swipedetect(el, callback){
         startX = touchobj.pageX;
         startY = touchobj.pageY;
         startTime = new Date().getTime();
-    // e.preventDefault();
   }, false);
 
   touchsurface.addEventListener('touchend', function(e){
@@ -101,10 +78,6 @@ function swipedetect(el, callback){
   }, false);
 }
 
-
-
-
-
 var el = document.getElementById('swipezone');
 
 swipedetect(el, function(swipedir) {
@@ -112,14 +85,9 @@ swipedetect(el, function(swipedir) {
   if (swipedir === 'right') plusSlides(-1);
 });
 
-
-
-
 var iwrap = document.getElementById('iwrap');
 var iframe = document.getElementById('iframe');
 var mode_btn = document.getElementById('mode-button');
-
-
 var repair_btn = document.getElementById('repair_btn');
 repair_btn.addEventListener('click', () => {
   iwrap.style.display = 'flex';
@@ -127,7 +95,6 @@ repair_btn.addEventListener('click', () => {
   mode_btn.innerText = 'Mobile';
   iframe.style.width = '100%';
 });
-
 
 var theyal_btn = document.getElementById('theyal_btn');
 theyal_btn.addEventListener('click', () => {
@@ -137,14 +104,10 @@ theyal_btn.addEventListener('click', () => {
   iframe.style.width = '100%';
 });
 
-
 var back_btn = document.getElementById('back-button');
 back_btn.addEventListener('click', () => {
   iwrap.style.display = 'none';
 });
-
-
-
 
 mode_btn.addEventListener('click', () => {
   mode_btn.innerText = mode_btn.innerText === 'Desktop' ? 'Mobile' : 'Desktop';
