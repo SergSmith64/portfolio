@@ -51,6 +51,10 @@ header {
   display: flex;
 }
 
+header ul {
+  margin-left: 25px;
+}
+
 header li {
   color: #942700;
   line-height: 1.3;
